@@ -8,7 +8,8 @@
 
 # Author: Faisal Ali
 # Creation Date: 16-Nov-2020
-# Version 1.0
+# Version 1.1
+# Revision Date: 17-Nov-2020
 
 # Brute force approach
 class Solution1:
@@ -20,9 +21,16 @@ class Solution1:
             rev += y % 10
             y //= 10
         if x < 0:
-            return (rev * -1)
+            a = rev * (-1)
+            if a >= -2147483648 and a<= 2147483647:
+                return a
+            else:
+                return 0
         else:
-            return rev
+            if rev <= 2147483647:
+                return rev
+            else:
+                return 0
 
 # Optimal approach
 class Solution2:
