@@ -38,7 +38,8 @@
 
 # Author: Faisal Ali
 # Creation Date: 17-Nov-2020
-# Version 1.0
+# Version 1.1
+# Revision Date: 17-Nov-2020
 
 # Brute Force Approach
 class Solution:
@@ -53,20 +54,14 @@ class Solution:
             lst[i] = roman[lst[i]] # Fetching corresponding values and replacing them in list
             sum += lst[i] # Calculating the sum
         for i in range(lth-1):  # For correcting the sum due to exceptional cases
-            if (lst[i] == 1 and lst[i+1] == 5):
-                sum = sum - 6 + 4
-            if (lst[i] == 1 and lst[i+1] == 10):
-                sum = sum - 11 + 9
-            if (lst[i] == 10 and lst[i+1] == 50):
-                sum = sum - 60 + 40
-            if (lst[i] == 10 and lst[i+1] == 100):
-                sum = sum - 110 + 90
-            if (lst[i] == 100 and lst[i+1] == 500):
-                sum = sum - 600 + 400
-            if (lst[i] == 100 and lst[i+1] == 1000):
-                sum = sum - 1100 + 900
+            if ((lst[i] == 1 and lst[i+1] == 5) or (lst[i] == 1 and lst[i+1] == 10)):
+                sum -= 2
+            if ((lst[i] == 10 and lst[i+1] == 50) or (lst[i] == 10 and lst[i+1] == 100)):
+                sum -= 20
+            if ((lst[i] == 100 and lst[i+1] == 500) or (lst[i] == 100 and lst[i+1] == 1000)):
+                sum -= 200
         return sum
-        
+
 obj = Solution()
 s = 'MCMXCIV'
 print(obj.romanToInt(s))
