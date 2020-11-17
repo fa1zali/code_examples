@@ -8,8 +8,8 @@
 # Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
 
 # Author: Faisal Ali
-# Creation Date: 16-Nov-2020
-# Version 1.1
+# Creation Date: 17-Nov-2020
+# Version 1.0
 
 # Brute Force Approach
 class Solution1:
