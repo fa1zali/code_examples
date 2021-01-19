@@ -19,19 +19,17 @@ class Solution1:
 # Optimal Approach
 class Solution2:
     def addtok(self,arr,k):
-        seen = []
-        for i in range(len(arr)):
-            diff = k - arr[i]
-            if diff in arr:
-                seen.append(diff)
-        if len(seen) == 2:
-            return True
-        else:
-            return False
+        seen = {}
+        for i, j in enumerate(arr):
+            diff = k - j
+            if diff in seen:
+                return True
+            seen[j] = i
+        return False
 
 
-arr = [10, 15, 3, 7]
-k = 25
+arr = [3,2,4]
+k = 6
 obj1 = Solution1()
 obj2 = Solution2()
 print(obj1.addtok(arr, k))
